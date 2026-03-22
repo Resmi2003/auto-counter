@@ -35,19 +35,20 @@ function Counter() {
   };
 
   return (    // everything inside this is shown on screen.
-    <div className="d-flex justify-content-center align-items-center vh-100">
+    <div className="d-flex justify-content-center align-items-center vh-100 px-3">
 
       {/* Counter Card */}
-      <Card className="text-center p-4" style={{ width: "18rem" }}>
+      <Card className="text-center p-4 w-100" style={{ maxWidth: "320px" }}>
 
         {/* Display counter value */}
-        <h1>{count}</h1>
+        <h1 style={{ fontWeight: "bold", fontSize: "3rem" }}>{count}</h1>
 
         {/* Buttons section */}
-        <div className="d-flex justify-content-between">
+        <div className="d-flex justify-content-between flex-wrap gap-2">
 
           {/* Pause / Resume Button */}
           <Button
+            className="flex-fill"
             variant={isRunning ? "warning" : "success"}
             onClick={handlePauseResume}
           >
@@ -55,7 +56,11 @@ function Counter() {
           </Button>
 
           {/* Reset Button */}
-          <Button variant="danger" onClick={handleReset}>
+          <Button
+            className="flex-fill"
+            variant="danger"
+            onClick={handleReset}
+          >
             Reset
           </Button>
 
@@ -65,4 +70,4 @@ function Counter() {
   );
 }
 
-export default Counter
+export default Counter;
